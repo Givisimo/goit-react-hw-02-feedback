@@ -1,13 +1,13 @@
 import React from 'react';
 import T from 'prop-types';
-import Button from '../App/Button/Button';
+import Button from '../Button/Button';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   const keys = Object.keys(options);
   return (
     <>
       {keys.map(key => (
-        <Button choiceText={key} choiceClick={onLeaveFeedback} key={key} />
+        <Button name={key} handleClick={onLeaveFeedback} key={key} />
       ))}
     </>
   );
@@ -15,9 +15,9 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 
 FeedbackOptions.propTypes = {
   options: T.shape({
-    good: T.string.isRequired,
-    neutral: T.string.isRequired,
-    bad: T.string.isRequired,
+    good: T.number.isRequired,
+    neutral: T.number.isRequired,
+    bad: T.number.isRequired,
   }).isRequired,
   onLeaveFeedback: T.func.isRequired,
 };

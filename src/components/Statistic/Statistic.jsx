@@ -11,7 +11,7 @@ const Statistic = ({ label, value }) => {
 
 Statistic.propTypes = {
   label: T.string.isRequired,
-  value: T.string.isRequired,
+  value: T.oneOfType([T.string, T.number]).isRequired,
 };
 
 export default Statistic;

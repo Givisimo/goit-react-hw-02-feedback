@@ -12,7 +12,7 @@ class App extends Component {
     bad: 0,
   };
 
-  clickChoice = e => {
+  handleChoice = e => {
     e.preventDefault();
     const { name } = e.currentTarget;
     this.setState(state => ({ [name]: state[name] + 1 }));
@@ -36,7 +36,7 @@ class App extends Component {
           <div>
             <FeedbackOptions
               options={this.state}
-              onLeaveFeedback={this.clickChoice}
+              onLeaveFeedback={this.handleChoice}
             />
           </div>
           {this.countTotalFeedback() > 0 ? (
