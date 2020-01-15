@@ -1,13 +1,11 @@
 import React from 'react';
 import T from 'prop-types';
 
-const Statistic = ({ label, value }) => {
-  return (
-    <p>
-      {label}:{value}
-    </p>
-  );
-};
+const Statistic = ({ label, value }) => (
+  <p>
+    {label}:{value}
+  </p>
+);
 
 Statistic.propTypes = {
   label: T.string.isRequired,
